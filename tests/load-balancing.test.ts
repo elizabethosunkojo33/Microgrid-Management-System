@@ -42,7 +42,7 @@ describe('Load Balancing Contract', () => {
   describe('get-grid-load', () => {
     it('should return grid load for a given timestamp', async () => {
       const timestamp = 1625097600
-      const gridLoad = { total-consumption: 1000, total-production: 800 }
+      const gridLoad = { totalConsumption: 1000, totalProduction: 800 }
       mockClarity.contracts['load-balancing'].functions['get-grid-load'].mockReturnValue(gridLoad)
       
       const result = await callContract('load-balancing', 'get-grid-load', [timestamp])
@@ -103,3 +103,4 @@ describe('Load Balancing Contract Tests', () => {
 })
 
 console.log('All load balancing tests completed.')
+
